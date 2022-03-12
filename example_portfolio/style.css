@@ -6,8 +6,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  width: 50vw;
-  min-width: 20rem;
+  background-color: white;
+  width: 40vw;
   margin: 0 auto;
 }
 
@@ -49,15 +49,18 @@ body {
 }
 
 .hero {
-  margin-top: 1rem;
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.6rem;
   justify-content: space-between;
+  margin-bottom: 10rem;
 }
 
 .hero::after {
-  margin: 0.8rem auto 2.2rem auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16rem;
   content: "";
   height: 0.15rem;
   width: 80%;
@@ -70,7 +73,7 @@ body {
 }
 
 .hero-byline {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   text-align: end;
 }
@@ -83,18 +86,31 @@ body {
 
 .featured-blogs-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .featured-blogs-item {
   list-style: none;
   border: 0.2rem solid black;
-  padding: 0.5rem;
+  border-radius: 0.3rem;
+  padding: 1rem 1.2rem;
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
+  gap: 1.2rem;
   justify-content: space-between;
+}
+
+.featured-blogs-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.featured-blogs-item-content p {
+  font-size: 0.9rem;
 }
 
 .featured-blogs-item > a {
@@ -103,9 +119,13 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-decoration-thickness: 0.15rem;
+  transition: color 0.2s, text-decoration-color 0.2s ease;
 }
 
 .featured-blogs-item > a:hover {
   color: black;
-  border-bottom: 1rem solid black;
+  text-decoration-color: black;
 }
