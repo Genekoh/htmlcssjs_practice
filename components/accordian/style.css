@@ -27,11 +27,11 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  padding: 16px 24px;
+  gap: 8px;
 }
 
 .item {
-  padding: 16px 24px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 24px;

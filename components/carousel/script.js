@@ -1,3 +1,5 @@
+"use-strict";
+
 const track = document.querySelector(".track");
 const slides = Array.from(track.children);
 const previousButton = document.querySelector(".previous-btn");
@@ -13,7 +15,7 @@ track.style.width = `${slides.length * 100}%`;
 slides.forEach((_, i) => {
   const dotNavButton = document.createElement("button");
   dotNavButton.classList.add("dot-nav-btn");
-  if (i == current) {
+  if (i === current) {
     dotNavButton.classList.add("dot-nav-btn-active");
   }
 
@@ -38,16 +40,29 @@ function moveSlide(to) {
   current = to;
 }
 
-previousButton.addEventListener("click", () => {
+function movePrevious() {
   const prev = current - 1;
   if (prev < 0) return;
 
   moveSlide(prev);
-});
+}
 
-nextButton.addEventListener("click", () => {
+function moveNext() {
   const next = current + 1;
-  if (next >= slides.length) return;
+  if (next >= slides.length) {
+    return;
+  }
 
   moveSlide(next);
+}
+
+previousButton.addEventListener("click", movePrevious);
+nextButton.addEventListener("click", moveNext);
+
+document.addEventListener("keydown", (ev) => {
+  if (ev.key === "ArrowLeft") {
+    movePrevious();
+  } else if (ev.key === "ArrowRight") {
+    moveNext();
+  }
 });

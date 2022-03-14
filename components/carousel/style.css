@@ -70,10 +70,13 @@ body {
 }
 
 .content-text ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   list-style: disc;
   margin: 20px;
   font-size: 0.96rem;
-  color: #868e96;
+  color: #495057;
 }
 
 .image-container {
