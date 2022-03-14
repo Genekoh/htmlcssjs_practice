@@ -3,24 +3,46 @@ const slides = Array.from(track.children);
 const previousButton = document.querySelector(".previous-btn");
 const nextButton = document.querySelector(".next-btn");
 
+const dotNav = document.querySelector(".dot-nav");
+let dotNavButtons = [];
+
 let current = 0;
 
 track.style.width = `${slides.length * 100}%`;
 
-const moveSlide = (to) => {
+slides.forEach((_, i) => {
+  const dotNavButton = document.createElement("button");
+  dotNavButton.classList.add("dot-nav-btn");
+  if (i == current) {
+    dotNavButton.classList.add("dot-nav-btn-active");
+  }
+
+  dotNav.append(dotNavButton);
+  dotNavButtons.push(dotNavButton);
+
+  dotNavButton.addEventListener("click", () => {
+    moveSlide(i);
+  });
+});
+
+function moveSlide(to) {
   if (to >= slides.length || to < 0) return;
 
   track.style.transform = `translateX(calc(-${
     (to / slides.length) * 100
   }% - 1px))`;
-};
+
+  dotNavButtons[current].classList.remove("dot-nav-btn-active");
+  dotNavButtons[to].classList.add("dot-nav-btn-active");
+
+  current = to;
+}
 
 previousButton.addEventListener("click", () => {
   const prev = current - 1;
   if (prev < 0) return;
 
   moveSlide(prev);
-  current = prev;
 });
 
 nextButton.addEventListener("click", () => {
@@ -28,5 +50,4 @@ nextButton.addEventListener("click", () => {
   if (next >= slides.length) return;
 
   moveSlide(next);
-  current = next;
 });
