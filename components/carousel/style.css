@@ -1,0 +1,123 @@
+/* 
+
+  Spacing System (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 256 
+
+  Font Size System (rem) base = 16px
+  0.833 / 1 / 1.2 / 1.44 / 1.728 / 2.074 / 2.488 / 2.986 / 3.583
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #343a40;
+}
+
+.carousel {
+  position: relative;
+  height: 400px;
+  width: 45%;
+  margin: 100px auto;
+}
+
+.track-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.track {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  list-style: none;
+
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  grid-template-rows: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 24px;
+  color: #212529;
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.content-text ul {
+  list-style: disc;
+  margin: 20px;
+  font-size: 0.96rem;
+  color: #868e96;
+}
+
+.image-container {
+  background-color: #ddd;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  width: 2.488rem;
+  height: 2.488rem;
+  padding: 4px;
+  border-radius: 100%;
+  border: none;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover,
+.carousel-btn:active {
+  background-color: #f1f3f5;
+}
+
+.previous-btn {
+  position: absolute;
+  top: 50%;
+  transform: translate(-70%, -50%);
+}
+
+.next-btn {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-30%, -50%);
+}
+
+.carousel-btn-caret {
+  width: 100%;
+  height: 100%;
+  stroke: #212529;
+}
