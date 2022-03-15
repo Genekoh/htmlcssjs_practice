@@ -49,9 +49,7 @@ function movePrevious() {
 
 function moveNext() {
   const next = current + 1;
-  if (next >= slides.length) {
-    return;
-  }
+  if (next >= slides.length) return;
 
   moveSlide(next);
 }

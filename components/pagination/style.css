@@ -1,0 +1,79 @@
+/* 
+
+  Spacing System (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 256 
+
+  Font Size System (rem) base = 16px
+  0.833 / 1 / 1.2 / 1.44 / 1.728 / 2.074 / 2.488 / 2.986 / 3.583
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #343a40;
+}
+
+.pagination {
+  max-width: 500px;
+  margin: 200px auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
+
+  transition: backgroud-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f8f9fa;
+}
+
+.btn:active {
+  background-color: #e9ecef;
+}
+
+.nav-previous,
+.nav-next {
+  width: 2.074rem;
+  height: 2.074rem;
+  padding: 2px 1px;
+}
+
+.nav-previous img,
+.nav-active img {
+  width: 100%;
+  height: 100%;
+}
+
+.pages {
+  display: flex;
+  gap: 8px;
+}
+
+.page-btn {
+  width: 1.728rem;
+  height: 1.728rem;
+  font-size: 1.2rem;
+}
+
+.page-btn-current,
+.page-btn-current:hover,
+.page-btn-current:active {
+  /* background-color: #dee2e6; */
+  /* color: white; */
+  border: 2px solid #343a40;
+}
